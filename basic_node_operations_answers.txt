@@ -1,0 +1,67 @@
+### Questions
+
+1. Run the commands sort, wc and uniq on the commands.js file. Explain how they
+work and what the output was.
+
+sort- returns the lines of a file alphabetized
+output of "sort bash.js":
+`
+commands.evaluateCmd(userInput);
+userInput = userInput.toString().trim();
+
+
+// The stdin 'data' event triggers after a user types in a line
+//evaluateCmd is a function which will be implemented in commands.js
+//prompt the user for input
+});
+const commands = require("./commands.js");
+process.stdin.on('data', (userInput) => {
+process.stdout.write('prompt > ');
+`
+
+wc- outputs a count of newline chars, a word count, and byte count for a filename
+output of "wc bash":
+`
+11  44 376 bash.js
+`
+
+uniq- compares subsequent lines in a file for complete matches. For any complete
+matches, the subsequent line is removed.
+output of 'uniq bash.js':
+`
+$ uniq bash.js
+const commands = require("./commands.js");
+
+//prompt the user for input
+process.stdout.write('prompt > ');
+
+// The stdin 'data' event triggers after a user types in a line
+process.stdin.on('data', (userInput) => {
+  userInput = userInput.toString().trim();
+//evaluateCmd is a function which will be implemented in commands.js
+  commands.evaluateCmd(userInput);
+});
+`
+
+2.Using the pipe (|) connect at least two commands and run it on commands.js. Explain what the output was and why the specific data was outputted.
+
+output of `uniq commands.js | wc`:
+$ uniq commands.js | wc
+     46     103    1054
+
+6. In this checkpoint, you encountered built-in JavaScript methods as well as the new ES6 syntax. Review the information below before attempting the programming challenge.
+Given a string, reverse the order of characters in each word within a sentence while maintaining the original word order and whitespace and return the string. To improve your problem-solving experience, use the suggested functions to solve the problem.
+
+```
+function reverseString(input){
+  var reversedArr = [];
+  stringArr = input.split(' ');
+  stringArr.forEach((item) => {
+        reversedArr.push(item.split("").reverse().join(''));
+  })
+  console.log(reversedArr.join(' '));
+
+}
+
+reverseString("I'm learning to program algorithms!");
+```
